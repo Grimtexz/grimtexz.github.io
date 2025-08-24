@@ -3,7 +3,6 @@
 @import "tailwindcss";
 @source "hugo_stats.json";
 
-/* 增强Markdown渲染样式 */
 @theme {
   --font-bilingual: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
