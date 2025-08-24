@@ -1,0 +1,57 @@
+baseURL = 'grimtexz.github.io/'
+languageCode = 'en-US'
+title = "Grim's Menagerie"
+theme = "void"
+
+# Social media links
+[params]
+  [params.social]
+    github = "https://github.com/yourusername"
+    twitter = "https://twitter.com/yourusername"
+    email = "your.email@example.com"
+  [params.avatar]
+    url = "./images/pfp_site.png"
+
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+  [[build.cachebusters]]
+    source = '(postcss|tailwind)\.config\.js'
+    target = 'css'
+[module]
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    disableWatch = true
+    source = 'hugo_stats.json'
+    target = 'assets/notwatching/hugo_stats.json'
+
+# Main menu
+[[menus.main]]
+name = 'Home'
+pageRef = '/'
+weight = 10
+
+[[menus.main]]
+name = 'Posts'
+pageRef = '/posts'
+weight = 20
+
+[[menus.main]]
+name = 'Tags'
+pageRef = '/tags'
+weight = 30
+
+[[menus.main]]
+name = 'Projects'
+pageRef = '/projects'
+weight = 40
+
+[[menus.main]]
+name = 'About'
+pageRef = '/about'
+weight = 50

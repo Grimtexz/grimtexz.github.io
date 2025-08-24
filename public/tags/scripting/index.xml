@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scripting on Grim&#39;s Menagerie</title>
+    <link>//localhost:1313/tags/scripting/</link>
+    <description>Recent content in Scripting on Grim&#39;s Menagerie</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 28 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/scripting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>To post, or not to post...</title>
+      <link>//localhost:1313/posts/blogpostone/</link>
+      <pubDate>Thu, 28 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/blogpostone/</guid>
+      <description>&lt;h1 id=&#34;welcome&#34;&gt;Welcome!&lt;/h1&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Hey! Howdy! Guten tag! おはようございます! My name is Kevin Mermelstein. I am an aspiring Cybersecurity Engineer. I am planning on using this blog to showcase my interests, current activities, and general thoughts about a host of various concepts, both related to cybersecurity and not.&lt;/p&gt;&#xA;&lt;h2 id=&#34;step-1-obsidian&#34;&gt;Step 1: Obsidian&lt;/h2&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;My first blog post is semi-documentation on my primary workflow process. My text editor for the posts are using Obsidian as a my primary note processor. It being both free and also modifiable helps me design and aesthetically pleasant experience with making markdown documents. I find markdown to not always be the most enjoyable in terms of designing charts or any visualizations, so using Obsidian helps. I will be updating this series with any additional posts that modify this workflow.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

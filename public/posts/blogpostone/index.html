@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" class="h-full">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>To post, or not to post... | Grim&#39;s Menagerie</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="shortcut icon" href="/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/favicon/site.webmanifest" />
+
+
+
+  
+    
+    
+      
+        <link rel="stylesheet" href="/css/main.css">
+      
+    
+  
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.min.07c5b09e225ac2202c6ceac007723cbf4db1ab42c166175344e3601d7c1a0043.css" media="screen" integrity="sha256-B8WwniJawiAsbOrAB3I8v02xq0LBZhdTRONgHXwaAEM=">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('pre code').forEach((el) => {
+      hljs.highlightElement(el);
+      
+      setTimeout(() => {
+        el.style.backgroundColor = 'transparent';
+        el.parentElement.style.backgroundColor = '#ffffff';
+      }, 10);
+    });
+  });
+</script>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+      <script src="/js/main.js"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false}
+      ],
+      throwOnError: false
+    });
+    
+    
+    document.querySelectorAll('pre code').forEach(function(codeBlock) {
+      
+      let language = '';
+      codeBlock.className.split(' ').forEach(function(cls) {
+        if (cls.startsWith('language-')) {
+          language = cls.substring(9);
+        }
+      });
+      
+      
+      const pre = codeBlock.parentNode;
+      const wrapper = pre.parentNode;
+      
+      
+      const container = document.createElement('div');
+      container.className = 'code-block-container';
+      container.style.backgroundColor = '#ffffff';
+      
+      
+      const header = document.createElement('div');
+      header.className = 'code-block-header';
+      
+      
+      if (language) {
+        const langLabel = document.createElement('span');
+        langLabel.className = 'code-language-label';
+        langLabel.textContent = language.toUpperCase();
+        header.appendChild(langLabel);
+      }
+      
+      
+      const copyButton = document.createElement('button');
+      copyButton.className = 'copy-button';
+      copyButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg> Copy';
+      
+      copyButton.addEventListener('click', function() {
+        
+        const code = codeBlock.textContent;
+        
+        
+        navigator.clipboard.writeText(code).then(function() {
+          
+          copyButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Copied!';
+          
+          
+          setTimeout(function() {
+            copyButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg> Copy';
+          }, 2000);
+        });
+      });
+      
+      header.appendChild(copyButton);
+      
+      
+      if (pre.parentNode) {
+        pre.parentNode.removeChild(pre);
+      }
+      
+      
+      pre.style.backgroundColor = '#ffffff';
+      codeBlock.style.backgroundColor = '#ffffff';
+      
+      
+      container.appendChild(header);
+      container.appendChild(pre);
+      
+      
+      wrapper.appendChild(container);
+      
+      
+      hljs.highlightElement(codeBlock);
+      
+      
+      setTimeout(() => {
+        pre.style.backgroundColor = '#ffffff';
+        codeBlock.style.backgroundColor = '#ffffff';
+      }, 50);
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    const footnoteBacklinks = document.querySelectorAll('.footnote-backref');
+    
+    footnoteBacklinks.forEach(function(backlink) {
+      backlink.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        
+        const href = backlink.getAttribute('href');
+        
+        if (href) {
+          
+          const target = document.querySelector(href);
+          
+          if (target) {
+            
+            target.scrollIntoView({ behavior: 'smooth' });
+            
+            
+            target.classList.add('footnote-highlight');
+            setTimeout(function() {
+              target.classList.remove('footnote-highlight');
+            }, 2000);
+          }
+        }
+      });
+    });
+  });
+</script>
+
+
+</head>
+<body class="flex flex-col bg-gray-50 font-bilingual">
+  <header class="fixed top-0 left-0 z-30 w-full bg-white shadow-sm">
+    <div class="w-full max-w-4xl mx-auto px-6 overflow-x-auto sm:overflow-visible">
+      <div class="flex items-center justify-between py-3">
+  <div class="text-lg sm:text-xl font-bold flex-shrink-0 max-w-[40%] sm:max-w-md truncate">
+    <a href="/" class="text-current hover:text-blue-600 transition-colors no-underline">
+      Grim&#39;s Menagerie
+    </a>
+  </div>
+  
+  <nav class="flex justify-end w-full whitespace-nowrap">
+    <ul class="flex flex-row items-center space-x-2 sm:space-x-4 md:space-x-6 py-2">
+    <li class="text-gray-600 hover:text-gray-900 text-base sm:text-lg">
+      <a
+        class="px-2 py-1 sm:px-3 sm:py-2 rounded hover:bg-gray-100 transition-colors" href="/">Home</a>
+    </li>
+    <li class="text-gray-600 hover:text-gray-900 text-base sm:text-lg">
+      <a
+        class="px-2 py-1 sm:px-3 sm:py-2 rounded hover:bg-gray-100 transition-colors" aria-current="true" class="ancestor font-semibold" href="/posts/">Posts</a>
+    </li>
+    <li class="text-gray-600 hover:text-gray-900 text-base sm:text-lg">
+      <a
+        class="px-2 py-1 sm:px-3 sm:py-2 rounded hover:bg-gray-100 transition-colors" href="/tags/">Tags</a>
+    </li>
+    <li class="text-gray-600 hover:text-gray-900 text-base sm:text-lg">
+      <a
+        class="px-2 py-1 sm:px-3 sm:py-2 rounded hover:bg-gray-100 transition-colors">Projects</a>
+    </li>
+    <li class="text-gray-600 hover:text-gray-900 text-base sm:text-lg">
+      <a
+        class="px-2 py-1 sm:px-3 sm:py-2 rounded hover:bg-gray-100 transition-colors">About</a>
+    </li>
+    </ul>
+  </nav>
+
+</div>
+    </div>
+  </header>
+  
+  <div class="flex-1 flex flex-col min-h-screen pt-24">
+    <main class="flex-1 w-full max-w-4xl mx-auto px-6 overflow-x-auto sm:overflow-visible">
+      
+  <article class="max-w-4xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+    <header class="p-8 border-b border-gray-100 relative overflow-hidden">
+      
+      <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-full opacity-70 -z-0 blur-2xl transform translate-x-1/4 -translate-y-1/4"></div>
+      
+      
+      
+      <div class="mb-3 flex">
+        
+        <a href="/categories/over-my-head" class="text-xs inline-flex items-center px-2.5 py-1 rounded-full bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors">
+          Over My Head
+        </a>
+        
+      </div>
+      
+      
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 relative">To post, or not to post...</h1>
+      
+      <div class="flex flex-wrap items-center text-sm text-gray-500 gap-4 relative">
+        
+        
+        
+        <time datetime="2024-03-28T00:00:00&#43;00:00" class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          2024-03-28
+        </time>
+        
+        
+        <span class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          7 min read
+        </span>
+
+        
+        <span id="busuanzi_container_page_pv" class="inline-flex items-center whitespace-nowrap">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5 text-gray-400 inline-block flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+          </svg><span class="whitespace-nowrap">Page Views <span id="busuanzi_value_page_pv"></span></span>
+        </span>
+      </div>
+    </header>
+
+    <div class="p-8 prose prose-sm sm:prose lg:prose-lg max-w-none">
+      <h1 id="welcome">Welcome!</h1>
+<hr>
+<p>Hey! Howdy! Guten tag! おはようございます! My name is Kevin Mermelstein. I am an aspiring Cybersecurity Engineer. I am planning on using this blog to showcase my interests, current activities, and general thoughts about a host of various concepts, both related to cybersecurity and not.</p>
+<h2 id="step-1-obsidian">Step 1: Obsidian</h2>
+<hr>
+<p>My first blog post is semi-documentation on my primary workflow process. My text editor for the posts are using Obsidian as a my primary note processor. It being both free and also modifiable helps me design and aesthetically pleasant experience with making markdown documents. I find markdown to not always be the most enjoyable in terms of designing charts or any visualizations, so using Obsidian helps. I will be updating this series with any additional posts that modify this workflow.</p>
+<h3 id="community-plugins-i-use">Community plugins I use:</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Plugins</th>
+          <th>Developer</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Better Word Count</td>
+          <td><a href="https://github.com/lukeleppan/better-word-count">Luke Leppan</a></td>
+      </tr>
+      <tr>
+          <td>Editing Toolbar</td>
+          <td><a href="https://github.com/PKM-er/obsidian-editing-toolbar">PKM-er</a></td>
+      </tr>
+      <tr>
+          <td>Iconize</td>
+          <td><a href="https://github.com/FlorianWoelki/obsidian-iconize">Florian Woelki</a></td>
+      </tr>
+      <tr>
+          <td>Kanban</td>
+          <td><a href="https://github.com/mgmeyers/obsidian-kanban">Matthew Meyers</a></td>
+      </tr>
+      <tr>
+          <td>Markwhen</td>
+          <td><a href="https://github.com/mark-when/obsidian-plugin">Mark-when</a></td>
+      </tr>
+      <tr>
+          <td>Omnisearch</td>
+          <td><a href="https://github.com/scambier/obsidian-omnisearch">Simon Cambier</a></td>
+      </tr>
+  </tbody>
+</table>
+<p>I use obsidian for both general notes as well as drafting reports. As this is a tool I use a lot, the idea of simplifying the export of markdown files, from Obsidian to an SSG is a ideal workflow.</p>
+<h3 id="documentation-tools">Documentation Tools</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Program Name</th>
+          <th>Version</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Flameshot</td>
+          <td>13.0.1</td>
+          <td>Screenshoting</td>
+      </tr>
+      <tr>
+          <td>OBS</td>
+          <td>31.1.2</td>
+          <td>Screen Capture</td>
+      </tr>
+      <tr>
+          <td>LibreOffice</td>
+          <td>25.2.4.3</td>
+          <td>Process notation</td>
+      </tr>
+      <tr>
+          <td>Zotero</td>
+          <td>7.0.22</td>
+          <td>Citation and Web scrape</td>
+      </tr>
+      <tr>
+          <td>VS Code</td>
+          <td>1.103.0</td>
+          <td>Scripting</td>
+      </tr>
+      <tr>
+          <td>Obsidian</td>
+          <td>1.8.10</td>
+          <td>Note Taking</td>
+      </tr>
+      <tr>
+          <td>HashMyFiles</td>
+          <td>2.50</td>
+          <td>GUI Hashing</td>
+      </tr>
+  </tbody>
+</table>
+<p>My process for documenting details, whether it be a forensic report or a cybersecurity documentation. Most of all my tools are FOSS tools. One of my largest repositories of information for me is both Obsidian and Zotero. Obsidian&rsquo;s ability to produce Zettelkasten style note systems and provide note linking to create well-structured mind maps. Zotero is also in my toolbelt, not only to ensure documentation of sources, but also for the value of archiving website data relevant to a specific source. While the same effect can be done using The Way Back Machine, hosting them locally lets me have posterity for my own research.</p>
+<h2 id="step-2-automation-scripting">Step 2: Automation Scripting</h2>
+<hr>
+<p>One of my current projects is scripting a python automation script to recognize image file embedding inside a markdown file, It then replaces the embedded wikilink text to a local one. If the attachments are local, they copy it to the correct directory in the static resources folder in a GoHugo site project. It also tries to download images from external URL embeds. It is not a perfect script. Not every website links their images similarly.</p>
+<p>It still has some ways to go to catch all the use cases I want, however, this works for my current uses:</p>
+<pre tabindex="0"><code>###############################################################################
+# Script: Image Conversion Remote Image Acquisition                           #
+# Version: 1.1.1                                                              #
+# Author: Kevin Mermelstein (Grimtexz) + Assistant tweaks                     #
+# Date: 2025-08-11                                                            #
+# Purpose: Replace Obsidian embeds with web paths and copy/download images    #
+#          for Hugo SSG. Refactored using GPT-5. A more comprehensive         #
+#          script for automating site production. Inspired by Network Chuck&#39;s #
+#          blog script.                                                       #
+###############################################################################
+  
+import os
+import shutil
+import re
+from urllib.parse import urlsplit, quote
+import requests
+import logging
+
+# ------------------ Configuration ------------------
+
+POSTS_DIR = os.getenv(&#39;OBSIDIAN_POSTS&#39;, r&#39;[Insert Path]&#39;)
+ATTACHMENTS_DIR = os.getenv(&#39;OBSIDIAN_ATTACHMENTS&#39;, r&#34;[Insert Path]&#34;)
+HUGO_STATIC_IMAGES_DIR = os.getenv(&#39;HUGO_IMAGE_DIR&#39;, r&#39;[Insert Path]&#39;)
+LOGGING_DIR = os.getenv(&#39;LOGGING_DIR&#39;, r&#39;.\logs&#39;)
+os.makedirs(LOGGING_DIR, exist_ok=True)  
+
+# ------------------ Logging ------------------
+
+logging.basicConfig(
+	filename=os.path.join(LOGGING_DIR, &#34;ImageConversionScript.log&#34;),
+	filemode=&#34;w&#34;,
+	level=logging.INFO,
+	format=&#34;%(asctime)s - %(levelname)s - %(message)s&#34;,
+	datefmt=&#34;%Y-%m-%d %H:%M:%S&#34;
+)
+
+console = logging.StreamHandler()
+console.setLevel(logging.INFO)
+formatter = logging.Formatter(&#34;%(levelname)s: %(message)s&#34;)
+console.setFormatter(formatter)
+logging.getLogger().addHandler(console)
+logger = logging.getLogger(__name__)
+  
+
+# ------------------ RegEx Patterns ------------------
+
+imageFileTypes = r&#39;(?:avif|bmp|gif|jpe?g|png|svg|webp|tiff?|ico|heic|heif)&#39;
+
+# Single parser for Obsidian-style local wiki-embeds ![[ path/to/file.ext | optional alt ]]
+
+re_local_wikilink = re.compile(
+	rf&#39;!\[\[\s*&#39;
+	rf&#39;(?P&lt;target&gt;[^\]|#^]+?\.{imageFileTypes})&#39;     # file.ext before | # ^
+	rf&#39;\s*(?:[#^][^\]|]*?)?&#39;                         # optional heading/block
+	rf&#39;(?:\|(?P&lt;alt&gt;[^\]]*?))?&#39;                      # optional |alt
+	rf&#39;\s*\]\]&#39;, re.IGNORECASE
+)
+
+# Remote embeds: ![alt](https://.../file.ext[?q#f]) with optional &lt;...&gt; and title
+
+re_altText = re.compile(rf&#39;!\[((?:\\.|[^\]])*?)\]\(\s*(?:&lt;\s*)?https?://[^\s&#34;\&#39;()&gt;\]]+?\.{imageFileTypes}&#39;, re.IGNORECASE)
+
+re_urls = re.compile(rf&#39;!\[(?:\\.|[^\]])*?\]\(\s*(?:&lt;\s*)?(https?://[^\s&#34;\&#39;()&gt;\]]+?\.{imageFileTypes}(?:\?[^\s&#34;\&#39;()&gt;\]]*)?(?:#[^\s&#34;\&#39;()&gt;\]]*)?)&#39;, re.IGNORECASE)
+
+re_url_embed = re.compile(rf&#39;(!\[(?:\\.|[^\]])*?\]\(\s*(?:&lt;\s*)?https?://[^\s&#34;\&#39;()&gt;\]]+?\.{imageFileTypes}(?:\?[^\s&#34;\&#39;()&gt;\]]*)?(?:#[^\s&#34;\&#39;()&gt;\]]*)?(?:\s*&gt;)?(?:\s+(?:&#34;[^&#34;]*&#34;|\&#39;[^\&#39;]*\&#39;))?\s*\))&#39;, re.IGNORECASE)
+
+# ------------------ Markdown File Walking ------------------
+def markdownSearch() -&gt; None:
+    for dirpath, _, filenames in os.walk(POSTS_DIR):
+        for file in filenames:
+            if file.endswith(&#39;.md&#39;):
+                markdownProcessing(dirpath, file)
+
+# ------------------ Download Remote Images------------------
+def downloadRemoteImage(imageURL: str, fileName: str) -&gt; bool:
+	try:
+		resp = requests.get(imageURL, timeout=15)
+		resp.raise_for_status()
+		if resp.status_code == 200:
+			dest = os.path.join(HUGO_STATIC_IMAGES_DIR, fileName)
+			with open(dest, &#34;wb&#34;) as f:
+				f.write(resp.content)
+			logger.info(&#39;Downloaded remote image -&gt; %s&#39;, imageURL)
+			return True
+		logger.warning(&#39;Unexpected status downloading %s: %s&#39;, imageURL, resp.status_code)
+		return False
+	except Exception as e:
+		logger.error(&#34;Download failed for %s: %s&#34;, imageURL, e)
+		return False
+
+# ------------------ Replace Local Embed Values ------------------
+def localEmbedsChange(markdownText: str) -&gt; str:
+	updated = markdownText
+	logger.info(&#39;Scanning for local image embeds&#39;)
+    
+	# Iterate over matches from the original text to avoid shifting indices
+	for m in re.finditer(re_local_wikilink, markdownText):
+		full   = m.group(0)
+		target = m.group(&#39;target&#39;)                   # e.g., &#34;folder/img.png&#34;
+		alt    = m.group(&#39;alt&#39;)
+		fname  = os.path.basename(target)            # &#34;img.png&#34;
+		if not alt:
+			alt = fname
+		copied = fileCopy(fname)
+		if not copied:
+			logger.warning(&#39;Skipping embed replacement; source not copied: %s&#39;, fname)
+			continue
+		newEmbed = f&#34;![{alt}](/static/images/{quote(fname)})&#34;
+		updated = updated.replace(full, newEmbed)
+		logger.info(&#39;Local embed converted: %s -&gt; %s&#39;, full, newEmbed)
+	return updated
+
+# ------------------ File Copy ------------------
+def fileCopy(fileName: str) -&gt; bool:
+	src_path  = os.path.join(ATTACHMENTS_DIR, fileName)
+	dest_path = os.path.join(HUGO_STATIC_IMAGES_DIR, fileName)
+	try:
+		if not os.path.isfile(src_path):
+			logger.warning(&#39;Local image not found: %s&#39;, src_path)
+			return False
+        if not os.path.isfile(dest_path):
+			shutil.copy2(src_path, dest_path)
+			logger.info(&#39;Copied local image -&gt; %s&#39;, dest_path)
+		else:
+			logger.info(&#39;Local image already present -&gt; %s&#39;, dest_path)
+		return True
+	except Exception as e:
+		logger.exception(&#39;Failed to copy local image %s: %s&#39;, fileName, e)
+		return False
+
+# ------------------ Replace Remote Embed Values ------------------
+def remoteEmbedsChange(markdownText: str) -&gt; str:
+	imageEmbeds = re.findall(re_url_embed, markdownText)
+	urlsFound = re.findall(re_urls, markdownText)
+	altTexts = re.findall(re_altText, markdownText)
+	logger.info(&#39;Scanning for remote image embeds&#39;)
+	updated = markdownText
+	for site, text, embed in zip(urlsFound, altTexts, imageEmbeds):
+		fileName = os.path.basename(urlsplit(site).path)
+		destPath = os.path.join(HUGO_STATIC_IMAGES_DIR, fileName)
+		try:
+			if os.path.exists(destPath):
+				logger.info(&#39;Remote image already present -&gt; %s&#39;, destPath)
+			else:
+				ok = downloadRemoteImage(site, fileName)
+			if not ok:
+					logger.warning(&#39;Skipping replacement due to download failure: %s&#39;, site)
+				continue
+		except Exception as e:
+			logger.exception(&#39;Unexpected error handling %s: %s&#39;, site, e)
+			continue
+		newEmbed = f&#34;![{text}](/static/images/{quote(fileName)})&#34;
+		updated = updated.replace(embed, newEmbed)
+		logger.info(&#39;Remote embed converted: %s -&gt; %s&#39;, embed, newEmbed)
+	return updated
+
+
+# ------------------ Markdown File Processing ------------------
+def markdownProcessing(path: str, file: str) -&gt; None:
+	logger.info(&#39;Processing file: %s&#39;, file)
+	markdownFile = os.path.join(path, file)
+	with open(markdownFile, &#39;r&#39;, encoding=&#39;utf-8&#39;) as f:
+		content = f.read()
+		content = localEmbedsChange(content)
+		content = remoteEmbedsChange(content)
+	with open(markdownFile, &#39;w&#39;, encoding=&#39;utf-8&#39;, newline=&#39;&#39;) as f:
+		f.write(content)
+	logger.info(&#39;Finished file: %s&#39;, file)
+
+# ------------------ Main ------------------
+def main() -&gt; None:
+	markdownSearch()
+
+if __name__ == &#39;__main__&#39;:
+	main()
+</code></pre><p>Key area&rsquo;s I will be focusing on moving forward is the RegEx Patterns. I am not that great with RegEx just yet. I understand it conceptually, but the mechanical logic can feel bogged down to me. I am chocking that up to experience at this moment in time. Additionally, I am considering using PIL library in order to convert the binary content from the HTTP request, and automatically convert the image type to jpg.</p>
+<h2 id="step-3-gohugo-ssg">Step 3: GoHugo SSG</h2>
+<hr>
+<p>SSGs (Static Site Generators)&hellip;</p>
+<p><em><strong>Exhaling&hellip;</strong></em></p>
+<p>Not to go into a diatribe, but there are too many to choose from. Jekyll, Next.js, Docusaurus, Nuxt, Gatsby, Astro among the many&hellip; They all roughly do the same thing. Converting a simpler format like markdown and converting it into an HTML format based on either pre-done or user-defined themes. The main differences are what is used to achieve a static site.</p>
+<p>My choice for using GoHugo is slightly arbitrary. Jekyll would have also have been a perfectly reasonable choice for creating a Github Pages site. For me, the biggest factor is my lack of familiarity with Ruby and the simplicity of Hugo&rsquo;s conversion process and theme acquisition.</p>
+<p>My choice for using an SSG is specific to three main factors:</p>
+<ol>
+<li>I do not like Common CMS services like Word Press. The sites feel identical. And if I am going to put all that effort in, I want something unique.</li>
+<li>While I do understand HTML and JS, I do not code in them. It is not something I do on a common basis. I would rather my energy be spent on generating content rather than hand coding a website.</li>
+<li>I do not like the security options on CMS sites.</li>
+</ol>
+<h2 id="step-4-plans-moving-forward">Step 4: Plans moving forward</h2>
+<hr>
+<p>TBD</p>
+
+    </div>
+
+    
+    <div class="px-8 pb-2 text-sm text-gray-500 flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+      </svg>
+      Last updated on 2024-03-28
+    </div>
+    
+
+    <footer class="px-8 py-6 bg-gray-50 border-t border-gray-100">
+      
+  <div class="tags-container">
+    <div class="text-gray-700 font-medium mb-2">Tags:</div>
+    <div class="flex flex-wrap gap-2">
+        <a href="/tags/gohugo/" class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-50 text-blue-700 hover:bg-blue-100 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-labelledby="tagIconTitle" role="img">
+            <title id="tagIconTitle">Tag</title>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+          </svg>
+          GoHugo
+        </a>
+        <a href="/tags/html/" class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-50 text-blue-700 hover:bg-blue-100 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-labelledby="tagIconTitle" role="img">
+            <title id="tagIconTitle">Tag</title>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+          </svg>
+          HTML
+        </a>
+        <a href="/tags/python/" class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-50 text-blue-700 hover:bg-blue-100 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-labelledby="tagIconTitle" role="img">
+            <title id="tagIconTitle">Tag</title>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+          </svg>
+          Python
+        </a>
+        <a href="/tags/scripting/" class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-50 text-blue-700 hover:bg-blue-100 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-labelledby="tagIconTitle" role="img">
+            <title id="tagIconTitle">Tag</title>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+          </svg>
+          Scripting
+        </a>
+    </div>
+  </div>
+
+      
+      
+      <div class="mt-6 flex justify-center">
+        <a href="/" class="inline-flex items-center text-gray-600 hover:text-blue-600 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Back to Home
+        </a>
+      </div>
+    </footer>
+  </article>
+
+    </main>
+  </div>
+  
+  <footer class="w-full max-w-4xl mx-auto px-6 overflow-x-auto sm:overflow-visible">
+    <div class="py-8 border-t border-gray-200 bg-gray-50 shadow-inner mt-10">
+  <div class="container mx-auto px-4 max-w-4xl">
+    
+     
+     
+       
+         
+       
+     
+       
+         
+       
+     
+       
+         
+       
+    
+
+    
+    <div class="flex justify-center space-x-8">
+      
+      
+      <div class="transform transition duration-200 hover:scale-110">
+        <a
+          href="https://github.com/yourusername"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-gray-600 hover:text-gray-900"
+          aria-label="GitHub"
+        >
+          <svg
+            class="h-7 w-7"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </a>
+      </div>
+      
+
+      
+      
+
+      
+      
+      <div class="transform transition duration-200 hover:scale-110">
+        <a
+          href="mailto:your.email@example.com"
+          rel="noopener noreferrer"
+          class="text-gray-600 hover:text-gray-900"
+          aria-label="邮箱"
+        >
+          <svg
+            class="h-7 w-7"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"
+            />
+            <path
+              d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"
+            />
+          </svg>
+        </a>
+      </div>
+      
+    </div>
+
+    <div class="text-center mt-6 text-sm text-gray-500">
+      &copy; 2025 Grim&#39;s Menagerie | Powered by <a href="https://github.com/Daucloud/hugo-theme-void" class="text-gray-600 hover:text-gray-900 hover:underline">hugo-theme-void</a> | <span id="busuanzi_container_site_pv" style="display: none;">Total visits: <span id="busuanzi_value_site_pv" class="text-gray-600"></span></span>
+    </div>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  </div>
+</div>
+
+  </footer>
+</body>
+</html>
