@@ -13,20 +13,18 @@
         </div>
       </div>
       {{ end }}
-      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">{{ .Site.Title }}</h1>
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">{{ .Site.Params.altTitleSpace.name }}</h1>
       <div class="prose prose-lg md:prose-xl mx-auto">
         {{ .Content }}
       </div>
-      
       {{ if .Site.Menus.main }}
       <div class="mt-12 flex flex-wrap justify-center gap-3">
-        {{ range .Site.Menus.main }}
-        <a href="{{ .URL }}" class="relative px-5 py-2.5 rounded-full text-blue-700 group overflow-hidden">
-          <!-- 背景效果 -->
-          <span class="absolute inset-0 w-full h-full bg-blue-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-          <!-- 文字内容 -->
-          <span class="relative z-10 transition-colors duration-300">{{ .Name }}</span>
-        </a>
+        {{ range .Site.Data.socials }}
+          {{ if eq .name "Email" }}
+            <a target="_blank" href="mailto:{{ .url }}" class="relative px-5 py-2.5 rounded-full text-slate-700 group overflow-hidden"><span class="absolute inset-0 w-full h-full bg-rose-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span><span class="relative z-10 transition-colors duration-300">{{ .name }}</span></span></a>
+          {{ else }}
+            <a target="_blank" href="{{ .url }}" class="relative px-5 py-2.5 rounded-full text-slate-700 group overflow-hidden"><span class="absolute inset-0 w-full h-full bg-rose-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span><span class="relative z-10 transition-colors duration-300">{{ .name }}</span></a>
+          {{ end }}
         {{ end }}
       </div>
       {{ end }}

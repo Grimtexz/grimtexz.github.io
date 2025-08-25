@@ -11,6 +11,7 @@
       "h1",
       "h2",
       "h3",
+      "h6",
       "head",
       "header",
       "hr",
@@ -57,6 +58,7 @@
       "bg-gray-100",
       "bg-gray-50",
       "bg-green-50",
+      "bg-rose-500",
       "bg-white",
       "blur-2xl",
       "blur-3xl",
@@ -122,6 +124,7 @@
       "hover:text-blue-600",
       "hover:text-gray-900",
       "hover:text-green-600",
+      "hover:text-rose-500",
       "hover:underline",
       "inline-block",
       "inline-flex",
@@ -243,6 +246,9 @@
       "text-green-600",
       "text-left",
       "text-lg",
+      "text-slate-600",
+      "text-slate-700",
+      "text-slate-900",
       "text-sm",
       "text-xl",
       "text-xs",
@@ -275,20 +281,28 @@
       "z-30"
     ],
     "ids": [
+      "active-certifications",
       "busuanzi_container_page_pv",
       "busuanzi_container_site_pv",
       "busuanzi_value_page_pv",
       "busuanzi_value_site_pv",
       "category-0",
       "category-1",
+      "coding-languages-known",
       "community-plugins-i-use",
       "documentation-tools",
+      "future-certification-progress",
+      "os-environments",
+      "other-tools",
+      "siem-environment-experience",
       "step-1-obsidian",
       "step-2-automation-scripting",
       "step-3-gohugo-ssg",
       "step-4-plans-moving-forward",
       "tagIconTitle",
-      "welcome"
+      "tool-experience",
+      "welcome",
+      "who-am-i"
     ]
   }
 }

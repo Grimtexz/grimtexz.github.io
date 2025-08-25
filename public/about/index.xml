@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abouts on Grim&#39;s Menagerie</title>
+    <link>//localhost:1313/about/</link>
+    <description>Recent content in Abouts on Grim&#39;s Menagerie</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <atom:link href="//localhost:1313/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>//localhost:1313/about/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/about/about/</guid>
+      <description>&lt;h1 id=&#34;who-am-i&#34;&gt;&lt;strong&gt;Who am I?&lt;/strong&gt;&lt;/h1&gt;&#xA;&lt;p&gt;This is a fantastic question&amp;hellip; one that, not to get too deep, is something that constantly develops throughout ones life. Where I am today will already change by tomorrow. So I think the most honest thing I can do is to use this blog as a means to show that growth. As for my name, I am Kevin Mermelstein; an aspiring cybersecurity engineer. I generally go by Grimtexz online. I am a graduate from the Champlain College in Burlington Vermont, for my Bachelor&amp;rsquo;s of Science in Computer Forensics and Digital Investigations. I graduated Summe Cum Laude and have a few accolades for dean&amp;rsquo;s and president&amp;rsquo;s list awards. I have since, begun to transition from forensic specific skill development into DFIR skills, both including red team and blue team applications. I enjoy work with both SIEM environments and pen-testing.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

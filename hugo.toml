@@ -11,6 +11,8 @@ theme = "void"
     email = "your.email@example.com"
   [params.avatar]
     url = "./images/pfp_site.png"
+  [params.altTitleSpace]
+    name= "Grimtexz"
 
 [build]
   [build.buildStats]

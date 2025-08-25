@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" class="h-full">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title> | Grim&#39;s Menagerie</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="shortcut icon" href="/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/favicon/site.webmanifest" />
+
+
+
+  
+    
+    
+      
+        <link rel="stylesheet" href="/css/main.css">
+      
+    
+  
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.min.07c5b09e225ac2202c6ceac007723cbf4db1ab42c166175344e3601d7c1a0043.css" media="screen" integrity="sha256-B8WwniJawiAsbOrAB3I8v02xq0LBZhdTRONgHXwaAEM=">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('pre code').forEach((el) => {
+      hljs.highlightElement(el);
+      
+      setTimeout(() => {
+        el.style.backgroundColor = 'transparent';
+        el.parentElement.style.backgroundColor = '#ffffff';
+      }, 10);
+    });
+  });
+</script>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+      <script src="/js/main.js"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false}
+      ],
+      throwOnError: false
+    });
+    
+    
+    document.querySelectorAll('pre code').forEach(function(codeBlock) {
+      
+      let language = '';
+      codeBlock.className.split(' ').forEach(function(cls) {
+        if (cls.startsWith('language-')) {
+          language = cls.substring(9);
+        }
+      });
+      
+      
+      const pre = codeBlock.parentNode;
+      const wrapper = pre.parentNode;
+      
+      
+      const container = document.createElement('div');
+      container.className = 'code-block-container';
+      container.style.backgroundColor = '#ffffff';
+      
+      
+      const header = document.createElement('div');
+      header.className = 'code-block-header';
+      
+      
+      if (language) {
+        const langLabel = document.createElement('span');
+        langLabel.className = 'code-language-label';
+        langLabel.textContent = language.toUpperCase();
+        header.appendChild(langLabel);
+      }
+      
+      
+      const copyButton = document.createElement('button');
+      copyButton.className = 'copy-button';
+      copyButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg> Copy';
+      
+      copyButton.addEventListener('click', function() {
+        
+        const code = codeBlock.textContent;
+        
+        
+        navigator.clipboard.writeText(code).then(function() {
+          
+          copyButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Copied!';
+          
+          
+          setTimeout(function() {
+            copyButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" /></svg> Copy';
+          }, 2000);
+        });
+      });
+      
+      header.appendChild(copyButton);
+      
+      
+      if (pre.parentNode) {
+        pre.parentNode.removeChild(pre);
+      }
+      
+      
+      pre.style.backgroundColor = '#ffffff';
+      codeBlock.style.backgroundColor = '#ffffff';
+      
+      
+      container.appendChild(header);
+      container.appendChild(pre);
+      
+      
+      wrapper.appendChild(container);
+      
+      
+      hljs.highlightElement(codeBlock);
+      
+      
+      setTimeout(() => {
+        pre.style.backgroundColor = '#ffffff';
+        codeBlock.style.backgroundColor = '#ffffff';
+      }, 50);
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    const footnoteBacklinks = document.querySelectorAll('.footnote-backref');
+    
+    footnoteBacklinks.forEach(function(backlink) {
+      backlink.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        
+        const href = backlink.getAttribute('href');
+        
+        if (href) {
+          
+          const target = document.querySelector(href);
+          
+          if (target) {
+            
+            target.scrollIntoView({ behavior: 'smooth' });
+            
+            
+            target.classList.add('footnote-highlight');
+            setTimeout(function() {
+              target.classList.remove('footnote-highlight');
+            }, 2000);
+          }
+        }
+      });
+    });
+  });
+</script>
+
+
+</head>
+<body class="flex flex-col bg-gray-50 font-bilingual">
+  <header class="fixed top-0 left-0 z-30 w-full bg-white shadow-sm">
+    <div class="w-full max-w-4xl mx-auto px-6 overflow-x-auto sm:overflow-visible">
+      <div class="flex items-center justify-between py-3">
+  <div class="text-lg sm:text-xl font-bold flex-shrink-0 max-w-[40%] sm:max-w-md truncate">
+    <a href="/" class="text-current hover:text-blue-600 transition-colors no-underline">
+      Grim&#39;s Menagerie
+    </a>
+  </div>
+  
+  <nav class="flex justify-end w-full whitespace-nowrap">
+    <ul class="flex flex-row items-center space-x-2 sm:space-x-4 md:space-x-6 py-2">
+    <li class="text-gray-600 hover:text-gray-900 text-base sm:text-lg">
+      <a
+        class="px-2 py-1 sm:px-3 sm:py-2 rounded hover:bg-gray-100 transition-colors" href="/">Home</a>
+    </li>
+    <li class="text-gray-600 hover:text-gray-900 text-base sm:text-lg">
+      <a
+        class="px-2 py-1 sm:px-3 sm:py-2 rounded hover:bg-gray-100 transition-colors" href="/posts/">Posts</a>
+    </li>
+    <li class="text-gray-600 hover:text-gray-900 text-base sm:text-lg">
+      <a
+        class="px-2 py-1 sm:px-3 sm:py-2 rounded hover:bg-gray-100 transition-colors" href="/tags/">Tags</a>
+    </li>
+    <li class="text-gray-600 hover:text-gray-900 text-base sm:text-lg">
+      <a
+        class="px-2 py-1 sm:px-3 sm:py-2 rounded hover:bg-gray-100 transition-colors">Projects</a>
+    </li>
+    <li class="text-gray-600 hover:text-gray-900 text-base sm:text-lg">
+      <a
+        class="px-2 py-1 sm:px-3 sm:py-2 rounded hover:bg-gray-100 transition-colors" aria-current="true" class="ancestor font-semibold" href="/about/">About</a>
+    </li>
+    </ul>
+  </nav>
+
+</div>
+    </div>
+  </header>
+  
+  <div class="flex-1 flex flex-col min-h-screen pt-24">
+    <main class="flex-1 w-full max-w-4xl mx-auto px-6 overflow-x-auto sm:overflow-visible">
+      
+  <article class="max-w-4xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+    <header class="p-8 border-b border-gray-100 relative overflow-hidden">
+      
+      <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-50 to-transparent rounded-full opacity-70 -z-0 blur-2xl transform translate-x-1/4 -translate-y-1/4"></div>
+      
+      
+      
+      
+      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 relative"></h1>
+      
+      <div class="flex flex-wrap items-center text-sm text-gray-500 gap-4 relative">
+        
+        
+        
+        <time datetime="0001-01-01T00:00:00&#43;00:00" class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          0001-01-01
+        </time>
+        
+        
+        <span class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          3 min read
+        </span>
+
+        
+        <span id="busuanzi_container_page_pv" class="inline-flex items-center whitespace-nowrap">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5 text-gray-400 inline-block flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+          </svg><span class="whitespace-nowrap">Page Views <span id="busuanzi_value_page_pv"></span></span>
+        </span>
+      </div>
+    </header>
+
+    <div class="p-8 prose prose-sm sm:prose lg:prose-lg max-w-none">
+      <h1 id="who-am-i"><strong>Who am I?</strong></h1>
+<p>This is a fantastic question&hellip; one that, not to get too deep, is something that constantly develops throughout ones life. Where I am today will already change by tomorrow. So I think the most honest thing I can do is to use this blog as a means to show that growth. As for my name, I am Kevin Mermelstein; an aspiring cybersecurity engineer. I generally go by Grimtexz online. I am a graduate from the Champlain College in Burlington Vermont, for my Bachelor&rsquo;s of Science in Computer Forensics and Digital Investigations. I graduated Summe Cum Laude and have a few accolades for dean&rsquo;s and president&rsquo;s list awards. I have since, begun to transition from forensic specific skill development into DFIR skills, both including red team and blue team applications. I enjoy work with both SIEM environments and pen-testing.</p>
+<p>I, ultimately, am a learner at heart. Whether it be whitepapers, textbooks, YouTube videos, podcasts, or a puzzle that makes me bang my head against the proverbial wall, I love it. I think that is my largest passion in life; learning. I struggle like any other, but I live for those challenges. I live for the novelty of understanding something completely to scratch at my hyper-fixations. Whether it being learning a coding language, learning an foreign language, or learning about the life cycle of the Antennarius Striatus of the Antennariidae family. I am all about diving deep into a subject matter, acknowledging what I don&rsquo;t know, in order to grow what I do.</p>
+<p>While I am a cybersecurity enthusiast, I like wear many hats. I have interests in D&amp;D, improv, gaming, writing, poetry, languages, learning, music, conservationism, politics, philosophy&hellip; I am all over the map with my interests and I wouldn&rsquo;t change it for the world. ^.^</p>
+<h3 id="active-certifications">Active Certifications:</h3>
+<p><em>In order of first certification to last earned:</em></p>
+<p>![[900 - References/902 - Attachments/Security+-png.png|100]]  ![[900 - References/902 - Attachments/CySA+-png.png|100]]</p>
+<h6 id="future-certification-progress">Future Certification Progress:</h6>
+<ul>
+<li>HTB CDSA ~60%</li>
+<li>HTB CBBE ~10%</li>
+</ul>
+<h3 id="coding-languages-known">Coding Languages known:</h3>
+<p><em>In order of experience:</em></p>
+<p>![[900 - References/902 - Attachments/python-auto.svg|50]] ![[900 - References/902 - Attachments/markdown-auto.svg|50]] ![[900 - References/902 - Attachments/powershell-auto 1.svg|50]] ![[900 - References/902 - Attachments/visualbasic-auto.svg|50]] ![[900 - References/902 - Attachments/html.svg|50]] ![[900 - References/902 - Attachments/css.svg|50]] ![[900 - References/902 - Attachments/bash-auto.svg|50]] ![[900 - References/902 - Attachments/terminal-auto.svg|50]] ![[900 - References/902 - Attachments/mysql-auto.svg|50]] ![[900 - References/902 - Attachments/cs.svg|50]] ![[900 - References/902 - Attachments/cpp 1.svg|50]] ![[900 - References/902 - Attachments/regex-auto.svg|50]]</p>
+<h3 id="siem-environment-experience">SIEM Environment Experience:</h3>
+<p><em>In order of experience:</em></p>
+<p>![[900 - References/902 - Attachments/elasticsearch.svg|80]]![[900 - References/902 - Attachments/splunk.svg|80]]</p>
+<h3 id="tool-experience">Tool Experience:</h3>
+<p><em>HTB Labs, College Course experience, Home lab, CTF:</em></p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Pentesting</strong></th>
+          <th><strong>Forensic Tools</strong></th>
+          <th><strong>Malware Analysis</strong></th>
+          <th><strong>IR Tools</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Impacket</td>
+          <td>The Sleuth Kit</td>
+          <td>Ghidra</td>
+          <td>Elastic</td>
+      </tr>
+      <tr>
+          <td>Metasploit Framework</td>
+          <td>Autopsy</td>
+          <td>ILSpy</td>
+          <td>Splunk</td>
+      </tr>
+      <tr>
+          <td>MSFVenom</td>
+          <td>X-Ways</td>
+          <td>PEiD</td>
+          <td>Wazuh</td>
+      </tr>
+      <tr>
+          <td>Nmap</td>
+          <td>Cellebrite UFED</td>
+          <td>Regripper</td>
+          <td>SilkETW</td>
+      </tr>
+      <tr>
+          <td>Nikto</td>
+          <td>Magnet Axiom</td>
+          <td>FakeNet-NG</td>
+          <td>Chainsaw</td>
+      </tr>
+      <tr>
+          <td>OWASP Dirbuster</td>
+          <td>FTK Imager</td>
+          <td>BinaryNinja</td>
+          <td>YARA</td>
+      </tr>
+      <tr>
+          <td>gobuster</td>
+          <td>Arsenal Imager</td>
+          <td>Sysinternals Suite</td>
+          <td>Hayabusa</td>
+      </tr>
+      <tr>
+          <td>dirb</td>
+          <td>Erik Zimmerman Tools</td>
+          <td>ProcessHacker</td>
+          <td>Wireshark</td>
+      </tr>
+      <tr>
+          <td>ffuf</td>
+          <td>Magnet RAM Capture</td>
+          <td>HxD</td>
+          <td>NetworkMiner</td>
+      </tr>
+      <tr>
+          <td>AngryIPScanner</td>
+          <td>ExifTool</td>
+          <td>Strings</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Burpsuite</td>
+          <td>HashMyFiles</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>OWASP Zap</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>CyberChef</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>THC-Hydra</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>JohnTheRipper</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Hashcat</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Netcat</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>CEWL</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>CrackMapExec</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Netexec</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Bloodhound</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Evil-WinRM</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Mimikatz</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>PEASS-NG</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Wappalyzer</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>LOLBins</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="os-environments">OS Environments:</h3>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Windows</strong></th>
+          <th><strong>Linux</strong></th>
+          <th><strong>Mac OS</strong></th>
+          <th><strong>FreeBSD</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Windows Server 2012</td>
+          <td>SIFT Workstation</td>
+          <td>MacOS 11 Big Sur</td>
+          <td>pfSense</td>
+      </tr>
+      <tr>
+          <td>Windows Server 2016</td>
+          <td>Remnux v7</td>
+          <td>MacOS 12 Monterey</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Windows Server 2019</td>
+          <td>Security Onion 2.4</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Windows 7</td>
+          <td>Parrot Security</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Windows 8</td>
+          <td>Parrot Security HTB</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Windows 8.1</td>
+          <td>Kali Linux</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Windows 10</td>
+          <td>Ubuntu 24.10</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>FlareVM (Win 10)</td>
+          <td>Ubuntu Server 24.02</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>CommandoVM</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Windows 11</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="other-tools">Other Tools</h2>
+<p><em>Both current tools and tools used previously:</em></p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Productivity</strong></th>
+          <th><strong>Coding</strong></th>
+          <th><strong>Virtualization</strong></th>
+          <th><strong>Recording</strong></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Anki</td>
+          <td>VSCode</td>
+          <td>VMWorkstation Pro 17</td>
+          <td>Audacity</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>LibreOffice</td>
+          <td>VS Enterprise<!-- raw HTML omitted --></td>
+          <td>Oracle VirtualBox</td>
+          <td>Flameshot</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Microsoft Office</td>
+          <td>Notepad++</td>
+          <td>Windows Hyper-V</td>
+          <td>OBS</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>OneNote</td>
+          <td>VoiceAttack</td>
+          <td>Docker</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Obsidian</td>
+          <td>Git</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Discord</td>
+          <td>Github Desktop</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Zoom</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Zotero</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Calibre</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>PureRef</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>PuTTY</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>WinSCP</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Microsoft IME</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>7Zip</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Scrivener</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Adobe Acrobat</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Clip Studio</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>KeePass</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Thunder</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+
+    </div>
+
+    
+
+    <footer class="px-8 py-6 bg-gray-50 border-t border-gray-100">
+      
+
+      
+      
+      <div class="mt-6 flex justify-center">
+        <a href="/" class="inline-flex items-center text-gray-600 hover:text-blue-600 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Back to Home
+        </a>
+      </div>
+    </footer>
+  </article>
+
+    </main>
+  </div>
+  
+  <footer class="w-full max-w-4xl mx-auto px-6 overflow-x-auto sm:overflow-visible">
+    <div class="py-8 border-t border-gray-200 bg-gray-50 shadow-inner mt-10">
+  <div class="container mx-auto px-4 max-w-4xl">
+    
+     
+     
+       
+         
+       
+     
+       
+         
+       
+     
+       
+         
+       
+    
+
+    
+    <div class="flex justify-center space-x-8">
+      
+      
+      <div class="transform transition duration-200 hover:scale-110">
+        <a
+          href="https://github.com/yourusername"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-gray-600 hover:text-gray-900"
+          aria-label="GitHub"
+        >
+          <svg
+            class="h-7 w-7"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </a>
+      </div>
+      
+
+      
+      
+
+      
+      
+      <div class="transform transition duration-200 hover:scale-110">
+        <a
+          href="mailto:your.email@example.com"
+          rel="noopener noreferrer"
+          class="text-gray-600 hover:text-gray-900"
+          aria-label="邮箱"
+        >
+          <svg
+            class="h-7 w-7"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"
+            />
+            <path
+              d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"
+            />
+          </svg>
+        </a>
+      </div>
+      
+    </div>
+
+    <div class="text-center mt-6 text-sm text-gray-500">
+      &copy; 2025 Grim&#39;s Menagerie | Powered by <a href="https://github.com/Daucloud/hugo-theme-void" class="text-gray-600 hover:text-gray-900 hover:underline">hugo-theme-void</a> | <span id="busuanzi_container_site_pv" style="display: none;">Total visits: <span id="busuanzi_value_site_pv" class="text-gray-600"></span></span>
+    </div>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  </div>
+</div>
+
+  </footer>
+</body>
+</html>
