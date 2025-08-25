@@ -54,6 +54,16 @@ jobs:
         run: npm install -g tailwindcss @tailwindcss/vite
       - name: Build process for tailwindcss  
         run: npm run dev
+      - name: move 1  
+        run: cd themes/void
+      - name: Install Node.js dependencies pt.3
+        run: npm ci
+      - name: Install tailwindcss  
+        run: npm install -g tailwindcss @tailwindcss/vite
+      - name: Build process for tailwindcss  
+        run: npm run dev
+      - name: move 2  
+        run: cd ../..
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
